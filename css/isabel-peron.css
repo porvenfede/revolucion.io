@@ -1,0 +1,681 @@
+
+:root {
+    --bordo-isabel: #702d36;
+    --bordo-oscuro: #35171d;
+    --rojo-isabel: #a34b4b;
+    --oro-isabel: #c5a66b;
+    --marfil-isabel: #eee5d7;
+    --texto-isabel: #d4cbc0;
+    --fondo-isabel: #151112;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body.pagina-isabel-peron {
+    min-height: 100vh;
+    background: var(--fondo-isabel);
+    color: var(--marfil-isabel);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+/* FONDO */
+
+.fondo-isabel {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: url("../img/isabel-peron.jpg") center center / cover no-repeat;
+    filter: grayscale(75%) brightness(0.25);
+    transform: scale(1.02);
+}
+
+.velo-isabel {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18, 12, 14, 0.86),
+            rgba(20, 14, 15, 0.97)
+        ),
+        linear-gradient(
+            90deg,
+            rgba(76, 27, 36, 0.4),
+            transparent 75%
+        );
+    pointer-events: none;
+}
+
+/* PORTADA */
+
+.hero-isabel {
+    position: relative;
+    min-height: 690px;
+    padding: 120px 8% 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(197, 166, 107, 0.25);
+}
+
+.contenido-isabel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.etiqueta-capitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--oro-isabel);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.etiqueta-capitulo .linea {
+    width: 55px;
+    height: 1px;
+    background: var(--oro-isabel);
+}
+
+.hero-isabel h1 {
+    margin: 32px 0 25px;
+    color: var(--marfil-isabel);
+    font-family: "Cinzel", serif;
+    font-size: clamp(3rem, 6.5vw, 5.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    text-shadow: 0 8px 35px rgba(0, 0, 0, 0.8);
+}
+
+.hero-isabel h1 span {
+    display: block;
+    color: var(--oro-isabel);
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 30px auto;
+    color: var(--oro-isabel);
+    font-size: 1.1rem;
+}
+
+.separador span {
+    width: 75px;
+    height: 1px;
+    background: rgba(197, 166, 107, 0.7);
+}
+
+.introduccion {
+    max-width: 850px;
+    margin: 0 auto;
+    color: var(--texto-isabel);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+.boton-explorar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 40px;
+    padding: 17px 27px;
+    border: 1px solid var(--oro-isabel);
+    color: var(--marfil-isabel);
+    background: rgba(112, 45, 54, 0.3);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton-explorar span {
+    color: var(--oro-isabel);
+    font-size: 1.2rem;
+}
+
+.boton-explorar:hover {
+    color: #171112;
+    background: var(--oro-isabel);
+}
+
+.boton-explorar:hover span {
+    color: #171112;
+}
+
+.numero-capitulo {
+    position: absolute;
+    right: 7%;
+    bottom: 35px;
+    color: rgba(197, 166, 107, 0.18);
+    font-family: "Cinzel", serif;
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* SECCIONES HISTÓRICAS */
+
+.seccion-historica {
+    width: min(1120px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 95px 0;
+    border-bottom: 1px solid rgba(197, 166, 107, 0.2);
+}
+
+.titulo-seccion {
+    margin-bottom: 42px;
+}
+
+.titulo-seccion > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--oro-isabel);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.titulo-seccion h2 {
+    max-width: 900px;
+    color: var(--marfil-isabel);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.linea-titulo {
+    width: 95px;
+    height: 3px;
+    margin-top: 23px;
+    background: var(--oro-isabel);
+}
+
+/* TEXTO Y BLOQUES */
+
+.bloque-historico {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(250px, 0.8fr);
+    align-items: center;
+    gap: 55px;
+}
+
+.texto-historico {
+    min-width: 0;
+    padding: 5px 0;
+}
+
+.texto-historico p {
+    margin-bottom: 23px;
+    color: var(--texto-isabel);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.95;
+    text-align: left;
+}
+
+.texto-historico p:last-child {
+    margin-bottom: 0;
+}
+
+/* DATOS DESTACADOS */
+
+.dato-destacado {
+    min-height: 230px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 4px solid var(--oro-isabel);
+    background: linear-gradient(
+        135deg,
+        rgba(112, 45, 54, 0.42),
+        rgba(53, 23, 29, 0.55)
+    );
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.dato-numero {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--oro-isabel);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.7rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.dato-texto {
+    color: var(--marfil-isabel);
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* SECCIONES TEMÁTICAS */
+
+.seccion-economia {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(112, 45, 54, 0.07),
+        transparent
+    );
+}
+
+.seccion-tucuman {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(197, 166, 107, 0.045),
+        transparent
+    );
+}
+
+.seccion-golpe {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(112, 45, 54, 0.09),
+        transparent
+    );
+}
+
+/* DESCRIPCIONES */
+
+.descripcion-seccion {
+    max-width: 900px;
+    margin: -12px 0 38px;
+    color: var(--texto-isabel);
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+/* TARJETAS */
+
+.desarrollo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.tarjeta-desarrollo {
+    position: relative;
+    min-height: 290px;
+    padding: 32px 27px;
+    border: 1px solid rgba(197, 166, 107, 0.23);
+    border-top: 3px solid var(--oro-isabel);
+    background: linear-gradient(
+        145deg,
+        rgba(112, 45, 54, 0.24),
+        rgba(22, 16, 17, 0.88)
+    );
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.tarjeta-desarrollo:hover {
+    transform: translateY(-5px);
+    border-color: rgba(197, 166, 107, 0.65);
+    background: rgba(112, 45, 54, 0.3);
+}
+
+.numero-tarjeta {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--oro-isabel);
+    font-family: "Cinzel", serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.tarjeta-desarrollo h3 {
+    margin-bottom: 17px;
+    color: var(--marfil-isabel);
+    font-family: "Cinzel", serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.tarjeta-desarrollo p {
+    color: var(--texto-isabel);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* CONSECUENCIAS */
+
+.seccion-consecuencias .tarjeta-desarrollo {
+    min-height: 275px;
+    border-top-color: var(--rojo-isabel);
+}
+
+.seccion-consecuencias .numero-tarjeta {
+    color: var(--rojo-isabel);
+}
+
+/* CIERRE */
+
+.cierre-capitulo {
+    padding: 110px 8%;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        rgba(80, 28, 37, 0.35),
+        rgba(16, 12, 13, 0.96)
+    );
+    border-bottom: 1px solid rgba(197, 166, 107, 0.2);
+}
+
+.cierre-capitulo > span {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--oro-isabel);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.cierre-capitulo h2 {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    color: var(--marfil-isabel);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.cierre-capitulo > p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--texto-isabel);
+    font-size: 1.18rem;
+    line-height: 1.95;
+}
+
+.mensaje-final {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 30px 35px;
+    border: 1px solid rgba(197, 166, 107, 0.3);
+    background: rgba(112, 45, 54, 0.2);
+}
+
+.mensaje-final > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--oro-isabel);
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.mensaje-final p {
+    color: var(--marfil-isabel);
+    font-size: 1.1rem;
+    line-height: 1.85;
+}
+
+.boton-siguiente {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 15px;
+    padding: 17px 28px;
+    border: 1px solid var(--oro-isabel);
+    color: var(--marfil-isabel);
+    background: rgba(112, 45, 54, 0.3);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton-siguiente span {
+    color: var(--oro-isabel);
+    font-size: 1.2rem;
+}
+
+.boton-siguiente:hover {
+    color: #171112;
+    background: var(--oro-isabel);
+}
+
+.boton-siguiente:hover span {
+    color: #171112;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    min-height: 85px;
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(12, 9, 10, 0.96);
+    border-top: 1px solid rgba(197, 166, 107, 0.22);
+}
+
+.pie-pagina a,
+.pie-pagina span {
+    color: var(--texto-isabel);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.pie-pagina a {
+    transition: color 0.3s ease;
+}
+
+.pie-pagina a:hover {
+    color: var(--oro-isabel);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .hero-isabel {
+        min-height: 620px;
+        padding: 100px 7%;
+    }
+
+    .seccion-historica {
+        width: min(100% - 50px, 850px);
+        padding: 75px 0;
+    }
+
+    .bloque-historico {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .dato-destacado {
+        min-height: auto;
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tarjeta-desarrollo {
+        min-height: 260px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    .hero-isabel {
+        min-height: 560px;
+        padding: 85px 6%;
+    }
+
+    .etiqueta-capitulo {
+        gap: 10px;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .etiqueta-capitulo .linea {
+        width: 30px;
+    }
+
+    .hero-isabel h1 {
+        font-size: clamp(2.3rem, 9vw, 3.6rem);
+        letter-spacing: 1px;
+    }
+
+    .introduccion {
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .numero-capitulo {
+        right: 5%;
+        bottom: 20px;
+        font-size: 5rem;
+    }
+
+    .seccion-historica {
+        width: calc(100% - 40px);
+        padding: 65px 0;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 30px;
+    }
+
+    .titulo-seccion > span {
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+
+    .texto-historico p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 20px;
+    }
+
+    .dato-destacado {
+        padding: 27px 24px;
+    }
+
+    .dato-numero {
+        font-size: 2.8rem;
+    }
+
+    .dato-texto {
+        font-size: 0.98rem;
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tarjeta-desarrollo,
+    .seccion-consecuencias .tarjeta-desarrollo {
+        min-height: auto;
+        padding: 28px 25px;
+    }
+
+    .tarjeta-desarrollo h3 {
+        font-size: 1.25rem;
+    }
+
+    .tarjeta-desarrollo p {
+        font-size: 1rem;
+    }
+
+    .cierre-capitulo {
+        padding: 80px 7%;
+    }
+
+    .cierre-capitulo > p {
+        font-size: 1.05rem;
+    }
+
+    .mensaje-final {
+        padding: 27px 22px;
+    }
+
+    .mensaje-final p {
+        font-size: 1rem;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-isabel h1 {
+        font-size: 2.2rem;
+    }
+
+    .boton-explorar,
+    .boton-siguiente {
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+        padding: 15px 19px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 1.75rem;
+    }
+
+    .texto-historico p {
+        font-size: 1rem;
+    }
+
+    .mensaje-final > span {
+        font-size: 1.65rem;
+    }
+}

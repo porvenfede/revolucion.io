@@ -1,0 +1,733 @@
+:root {
+    --azul: #244653;
+    --azul-oscuro: #101d23;
+    --azul-profundo: #172b34;
+    --azul-medio: #294b58;
+    --oro: #c5a36a;
+    --oro-claro: #e2c995;
+    --marfil: #eee8dc;
+    --texto: #d5dce0;
+    --fondo: #12191d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body.pagina-frondizi {
+    background: var(--fondo);
+    color: var(--marfil);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =================================
+   FONDO FIJO
+================================= */
+
+.fondo-frondizi {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background:
+        linear-gradient(rgba(10, 20, 25, 0.25), rgba(10, 20, 25, 0.45)),
+        url('../img/frondizi.jpg') center / cover no-repeat;
+    filter: grayscale(25%);
+    pointer-events: none;
+}
+
+.velo-frondizi {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 20, 25, 0.96) 0%,
+        rgba(17, 36, 44, 0.84) 55%,
+        rgba(12, 22, 27, 0.45) 100%
+    );
+    pointer-events: none;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+/* =================================
+   PORTADA DEL CAPÍTULO
+================================= */
+
+.hero-frondizi {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 150px 9% 110px;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-frondizi {
+    width: 100%;
+    max-width: 1050px;
+    animation: aparecer 0.9s ease both;
+}
+
+.etiqueta-capitulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 35px;
+    color: var(--oro-claro);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.etiqueta-capitulo .linea {
+    width: 55px;
+    height: 1px;
+    background: var(--oro);
+}
+
+.hero-frondizi h1 {
+    display: flex;
+    flex-direction: column;
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(68px, 9vw, 125px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 4px;
+}
+
+.hero-frondizi h1 span {
+    color: var(--oro-claro);
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 260px;
+    margin: 35px 0;
+    color: var(--oro);
+}
+
+.separador span {
+    flex: 1;
+    height: 1px;
+    background: var(--oro);
+}
+
+.introduccion {
+    max-width: 850px;
+    color: rgba(238, 232, 220, 0.95);
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.boton-explorar {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 38px;
+    padding: 19px 28px;
+    border: 1px solid var(--oro);
+    background: rgba(36, 70, 83, 0.75);
+    color: var(--marfil);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.boton-explorar:hover {
+    background: var(--oro);
+    color: var(--azul-oscuro);
+}
+
+.boton-explorar span {
+    font-size: 23px;
+}
+
+.numero-capitulo {
+    position: absolute;
+    right: 9%;
+    bottom: 7%;
+    color: rgba(226, 201, 149, 0.13);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(120px, 19vw, 250px);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* =================================
+   SECCIONES GENERALES
+================================= */
+
+.seccion-historica,
+.consecuencias {
+    position: relative;
+    z-index: 2;
+    padding: 105px 8%;
+    background: rgba(18, 25, 29, 0.78);
+}
+
+.titulo-seccion {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.titulo-seccion > span {
+    color: var(--oro);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.titulo-seccion h2 {
+    margin-top: 20px;
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(35px, 4.2vw, 53px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.linea-titulo {
+    width: 75px;
+    height: 2px;
+    margin: 25px auto 0;
+    background: var(--oro);
+}
+
+/* =================================
+   CONTEXTO HISTÓRICO
+================================= */
+
+.bloque-historico {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.75fr);
+    align-items: center;
+    gap: 65px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.texto-historico {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 15px;
+}
+
+.subtitulo {
+    display: block;
+    margin-bottom: 28px;
+    color: var(--oro);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.texto-historico p {
+    max-width: 760px;
+    margin-bottom: 25px;
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.9;
+    text-align: left;
+}
+
+.texto-historico p:last-child {
+    margin-bottom: 0;
+}
+
+.dato-destacado {
+    padding: 45px 32px;
+    border: 1px solid rgba(197, 163, 106, 0.4);
+    background: linear-gradient(
+        145deg,
+        rgba(36, 70, 83, 0.7),
+        rgba(17, 29, 35, 0.95)
+    );
+    text-align: center;
+}
+
+.dato-numero {
+    display: block;
+    color: var(--oro-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 75px;
+    line-height: 1.2;
+}
+
+.dato-texto {
+    display: block;
+    margin-top: 20px;
+    color: var(--marfil);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =================================
+   DESARROLLISMO
+================================= */
+
+.seccion-desarrollo {
+    background: rgba(26, 41, 48, 0.82);
+}
+
+.descripcion-seccion {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    color: var(--texto);
+    font-size: 21px;
+    line-height: 1.9;
+    text-align: center;
+}
+
+.desarrollo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-desarrollo {
+    min-width: 0;
+    padding: 40px 32px;
+    border: 1px solid rgba(197, 163, 106, 0.28);
+    background: rgba(8, 20, 26, 0.55);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-desarrollo:hover {
+    transform: translateY(-5px);
+    border-color: var(--oro);
+}
+
+.numero-tarjeta {
+    color: var(--oro);
+    font-family: 'Cinzel', serif;
+    font-size: 39px;
+}
+
+.tarjeta-desarrollo h3 {
+    margin: 22px 0 17px;
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.tarjeta-desarrollo p {
+    color: var(--texto);
+    font-size: 18px;
+    line-height: 1.85;
+}
+
+/* =================================
+   CONFLICTOS POLÍTICOS
+================================= */
+
+.seccion-conflictos {
+    background: rgba(18, 25, 29, 0.82);
+}
+
+.acontecimientos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.acontecimiento {
+    padding: 35px 38px;
+    border-left: 3px solid var(--oro);
+    background: rgba(36, 70, 83, 0.45);
+    transition: background 0.3s ease;
+}
+
+.acontecimiento:hover {
+    background: rgba(36, 70, 83, 0.65);
+}
+
+.fecha {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--oro-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 27px;
+}
+
+.acontecimiento h3 {
+    margin-bottom: 16px;
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.acontecimiento p {
+    color: var(--texto);
+    font-size: 18px;
+    line-height: 1.85;
+}
+
+/* =================================
+   DERROCAMIENTO DE FRONDIZI
+================================= */
+
+.consecuencias {
+    background: rgba(26, 41, 48, 0.82);
+    padding: 110px 8%;
+}
+
+.consecuencias .titulo-seccion {
+    margin-bottom: 60px;
+}
+
+.consecuencias .bloque-historico {
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.7fr);
+    gap: 55px;
+    max-width: 1180px;
+    padding: 0 35px;
+    align-items: center;
+}
+
+.consecuencias .texto-historico {
+    width: 100%;
+    padding: 25px 30px;
+    border-left: 2px solid rgba(197, 163, 106, 0.55);
+    background: rgba(8, 20, 26, 0.4);
+}
+
+.consecuencias .texto-historico p {
+    max-width: 720px;
+    margin-bottom: 27px;
+    padding: 0 5px;
+    color: var(--texto);
+    font-size: 21px;
+    line-height: 1.9;
+    text-align: left;
+}
+
+.consecuencias .texto-historico p:last-child {
+    margin-bottom: 0;
+}
+
+.consecuencias .dato-destacado {
+    padding: 45px 30px;
+    background: rgba(8, 20, 26, 0.65);
+}
+
+/* =================================
+   CIERRE DEL CAPÍTULO
+================================= */
+
+.cierre-capitulo {
+    position: relative;
+    z-index: 2;
+    padding: 105px 8%;
+    background: linear-gradient(
+        145deg,
+        #172b34,
+        #10191e
+    );
+    text-align: center;
+}
+
+.cierre-capitulo > span {
+    color: var(--oro);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.cierre-capitulo h2 {
+    margin: 27px 0;
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(36px, 4.5vw, 52px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.cierre-capitulo p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--texto);
+    font-size: 21px;
+    line-height: 1.9;
+}
+
+.boton-siguiente {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 19px 30px;
+    border: 1px solid var(--oro);
+    background: var(--azul);
+    color: var(--marfil);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.boton-siguiente:hover {
+    background: var(--oro);
+    color: var(--azul-oscuro);
+}
+
+/* =================================
+   PIE DE PÁGINA
+================================= */
+
+.pie-pagina {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 8%;
+    border-top: 1px solid rgba(197, 163, 106, 0.2);
+    background: #0c1215;
+}
+
+.pie-pagina a,
+.pie-pagina span {
+    color: rgba(238, 232, 220, 0.8);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.pie-pagina a:hover {
+    color: var(--oro-claro);
+}
+
+/* =================================
+   ANIMACIÓN
+================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   TABLETS
+================================= */
+
+@media (max-width: 1000px) {
+
+    .bloque-historico {
+        gap: 35px;
+        grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.8fr);
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .consecuencias .bloque-historico {
+        gap: 30px;
+    }
+
+}
+
+/* =================================
+   CELULARES
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero-frondizi {
+        min-height: 90vh;
+        padding: 140px 7% 100px;
+    }
+
+    .hero-frondizi h1 {
+        font-size: clamp(48px, 11vw, 78px);
+    }
+
+    .etiqueta-capitulo {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .introduccion {
+        font-size: 18px;
+    }
+
+    .numero-capitulo {
+        right: 5%;
+        bottom: 4%;
+        font-size: 120px;
+    }
+
+    .seccion-historica,
+    .consecuencias {
+        padding: 75px 6%;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 45px;
+    }
+
+    .titulo-seccion > span {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 34px;
+    }
+
+    .bloque-historico,
+    .consecuencias .bloque-historico {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0;
+    }
+
+    .texto-historico,
+    .consecuencias .texto-historico {
+        padding: 20px;
+    }
+
+    .texto-historico p,
+    .consecuencias .texto-historico p {
+        font-size: 18px;
+    }
+
+    .dato-destacado {
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .descripcion-seccion {
+        font-size: 18px;
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-desarrollo {
+        padding: 32px 27px;
+    }
+
+    .acontecimientos {
+        grid-template-columns: 1fr;
+    }
+
+    .acontecimiento {
+        padding: 28px;
+    }
+
+    .cierre-capitulo {
+        padding: 80px 7%;
+    }
+
+    .cierre-capitulo p {
+        font-size: 18px;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* =================================
+   CELULARES PEQUEÑOS
+================================= */
+
+@media (max-width: 420px) {
+
+    .hero-frondizi h1 {
+        font-size: 44px;
+    }
+
+    .separador {
+        width: 190px;
+    }
+
+    .introduccion {
+        font-size: 17px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 29px;
+    }
+
+    .seccion-historica,
+    .consecuencias {
+        padding: 65px 5%;
+    }
+
+    .texto-historico,
+    .consecuencias .texto-historico {
+        padding: 17px;
+    }
+
+    .texto-historico p,
+    .consecuencias .texto-historico p {
+        font-size: 17px;
+    }
+
+    .dato-numero {
+        font-size: 60px;
+    }
+
+    .boton-explorar,
+    .boton-siguiente {
+        font-size: 12px;
+        gap: 15px;
+        padding: 16px 20px;
+    }
+
+}

@@ -1,0 +1,615 @@
+
+:root {
+    --azul-regreso: #344b59;
+    --azul-oscuro: #17252e;
+    --celeste-regreso: #7895a2;
+    --oro-regreso: #c7a66d;
+    --marfil-regreso: #eee7d9;
+    --texto-regreso: #d4d0c7;
+    --fondo-regreso: #111619;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.pagina-regreso-peron {
+    min-height: 100vh;
+    background: var(--fondo-regreso);
+    color: var(--marfil-regreso);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+.fondo-regreso {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: url("../img/regreso-peron.jpg") center / cover no-repeat;
+    filter: grayscale(65%) brightness(0.30);
+    transform: scale(1.02);
+}
+
+.velo-regreso {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(13, 19, 23, 0.82), rgba(15, 20, 23, 0.96)),
+        linear-gradient(90deg, rgba(32, 58, 72, 0.38), transparent 75%);
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 76px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(199, 166, 109, 0.25);
+    background: rgba(11, 15, 17, 0.82);
+}
+
+/* PORTADA */
+
+.hero-regreso {
+    position: relative;
+    min-height: 620px;
+    padding: 110px 8% 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenido-regreso {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.etiqueta-capitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--oro-regreso);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.etiqueta-capitulo .linea {
+    width: 45px;
+    height: 1px;
+    background: var(--oro-regreso);
+}
+
+.hero-regreso h1 {
+    margin: 35px 0 25px;
+    color: var(--marfil-regreso);
+    font-family: "Cinzel", serif;
+    font-size: clamp(3.5rem, 8vw, 6.7rem);
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: 1.15;
+    text-shadow: 0 8px 35px rgba(0, 0, 0, 0.7);
+}
+
+.hero-regreso h1 span {
+    display: block;
+    color: var(--oro-regreso);
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 25px auto 30px;
+    color: var(--oro-regreso);
+    font-size: 1rem;
+}
+
+.separador span {
+    width: 65px;
+    height: 1px;
+    background: rgba(199, 166, 109, 0.7);
+}
+
+.introduccion {
+    max-width: 850px;
+    margin: 0 auto;
+    color: var(--texto-regreso);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+.boton-explorar {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 38px;
+    padding: 16px 30px;
+    border: 1px solid var(--oro-regreso);
+    background: rgba(52, 75, 89, 0.35);
+    color: var(--marfil-regreso);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.boton-explorar:hover {
+    background: var(--azul-regreso);
+    transform: translateY(-3px);
+}
+
+.boton-explorar span {
+    color: var(--oro-regreso);
+    font-size: 1.2rem;
+}
+
+.numero-capitulo {
+    position: absolute;
+    right: 8%;
+    bottom: 35px;
+    color: rgba(199, 166, 109, 0.65);
+    font-family: "Cinzel", serif;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+}
+
+/* SECCIONES HISTÓRICAS */
+
+.seccion-historica {
+    width: min(1100px, calc(100% - 60px));
+    margin: 0 auto;
+    padding: 90px 0;
+    border-bottom: 1px solid rgba(199, 166, 109, 0.20);
+    scroll-margin-top: 35px;
+}
+
+.titulo-seccion {
+    margin-bottom: 35px;
+}
+
+.titulo-seccion > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--oro-regreso);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.titulo-seccion h2 {
+    color: var(--marfil-regreso);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.linea-titulo {
+    width: 80px;
+    height: 3px;
+    margin-top: 22px;
+    background: var(--oro-regreso);
+}
+
+.bloque-historico {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5px 25px;
+}
+
+.texto-historico {
+    color: var(--texto-regreso);
+    font-size: 1.18rem;
+    font-weight: 400;
+    line-height: 2;
+    text-align: left;
+}
+
+.texto-historico p {
+    margin-bottom: 25px;
+}
+
+.texto-historico p:last-child {
+    margin-bottom: 0;
+}
+
+.texto-historico strong {
+    color: var(--marfil-regreso);
+    font-weight: 700;
+}
+
+/* DATOS DESTACADOS */
+
+.dato-destacado {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    max-width: 900px;
+    margin: 42px auto 10px;
+    padding: 30px 35px;
+    border-left: 4px solid var(--oro-regreso);
+    background: rgba(52, 75, 89, 0.30);
+}
+
+.dato-numero {
+    flex-shrink: 0;
+    color: var(--oro-regreso);
+    font-family: "Cinzel", serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dato-texto {
+    color: var(--marfil-regreso);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* SECCIONES ESPECIALES */
+
+.seccion-elecciones,
+.seccion-ezeiza,
+.seccion-gobierno,
+.seccion-final {
+    position: relative;
+}
+
+.seccion-elecciones .dato-destacado {
+    background: rgba(52, 75, 89, 0.36);
+}
+
+.seccion-ezeiza .dato-destacado {
+    border-left-color: #a66d66;
+    background: rgba(91, 43, 43, 0.25);
+}
+
+.seccion-gobierno .dato-destacado {
+    background: rgba(52, 75, 89, 0.30);
+}
+
+.seccion-final {
+    border-bottom: none;
+}
+
+.seccion-final .dato-destacado {
+    border-left-color: var(--oro-regreso);
+}
+
+/* DESCRIPCIÓN DE LA CRISIS */
+
+.descripcion-seccion {
+    max-width: 900px;
+    margin: 0 0 35px;
+    color: var(--texto-regreso);
+    font-size: 1.17rem;
+    line-height: 1.9;
+}
+
+/* TARJETAS DE CONFLICTOS */
+
+.desarrollo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.tarjeta-desarrollo {
+    position: relative;
+    min-height: 260px;
+    padding: 32px 27px;
+    border: 1px solid rgba(199, 166, 109, 0.25);
+    border-top: 3px solid var(--oro-regreso);
+    background: rgba(22, 31, 36, 0.88);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-desarrollo:hover {
+    transform: translateY(-5px);
+    border-color: var(--oro-regreso);
+}
+
+.numero-tarjeta {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--oro-regreso);
+    font-family: "Cinzel", serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tarjeta-desarrollo h3 {
+    margin-bottom: 17px;
+    color: var(--marfil-regreso);
+    font-family: "Cinzel", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.tarjeta-desarrollo p {
+    color: var(--texto-regreso);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* CIERRE */
+
+.cierre-capitulo {
+    padding: 100px 25px;
+    text-align: center;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(35, 57, 68, 0.42),
+            rgba(13, 17, 19, 0.94)
+        );
+}
+
+.cierre-capitulo > span {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--oro-regreso);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.cierre-capitulo h2 {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    color: var(--marfil-regreso);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.1rem, 4vw, 3.3rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cierre-capitulo p {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    color: var(--texto-regreso);
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.boton-siguiente {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 16px 30px;
+    border: 1px solid var(--oro-regreso);
+    background: var(--azul-oscuro);
+    color: var(--marfil-regreso);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.boton-siguiente:hover {
+    background: var(--azul-regreso);
+    transform: translateY(-3px);
+}
+
+.boton-siguiente span {
+    color: var(--oro-regreso);
+    font-size: 1.2rem;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    min-height: 85px;
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(199, 166, 109, 0.22);
+    background: rgba(10, 13, 15, 0.96);
+}
+
+.pie-pagina a {
+    color: var(--marfil-regreso);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.pie-pagina a:hover {
+    color: var(--oro-regreso);
+}
+
+.pie-pagina span {
+    color: var(--texto-regreso);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .hero-regreso {
+        min-height: 550px;
+    }
+
+    .seccion-historica {
+        width: min(100% - 45px, 850px);
+        padding: 75px 0;
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tarjeta-desarrollo {
+        min-height: 230px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    .hero-regreso {
+        min-height: 490px;
+        padding: 85px 7%;
+    }
+
+    .etiqueta-capitulo {
+        gap: 10px;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+    }
+
+    .etiqueta-capitulo .linea {
+        width: 25px;
+    }
+
+    .hero-regreso h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+        letter-spacing: 2px;
+    }
+
+    .introduccion {
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .numero-capitulo {
+        right: 7%;
+        bottom: 20px;
+    }
+
+    .seccion-historica {
+        width: calc(100% - 36px);
+        padding: 60px 0;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 1.9rem;
+    }
+
+    .titulo-seccion > span {
+        font-size: 0.73rem;
+        letter-spacing: 2px;
+        line-height: 1.7;
+    }
+
+    .bloque-historico {
+        padding: 5px 8px;
+    }
+
+    .texto-historico {
+        font-size: 1.05rem;
+        line-height: 1.85;
+    }
+
+    .dato-destacado {
+        align-items: flex-start;
+        gap: 16px;
+        padding: 23px 20px;
+    }
+
+    .dato-numero {
+        font-size: 2rem;
+    }
+
+    .dato-texto {
+        font-size: 0.95rem;
+    }
+
+    .descripcion-seccion {
+        font-size: 1.05rem;
+    }
+
+    .desarrollo-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tarjeta-desarrollo {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .tarjeta-desarrollo h3 {
+        font-size: 1.15rem;
+    }
+
+    .tarjeta-desarrollo p {
+        font-size: 0.98rem;
+    }
+
+    .cierre-capitulo {
+        padding: 75px 22px;
+    }
+
+    .cierre-capitulo h2 {
+        font-size: 2rem;
+    }
+
+    .cierre-capitulo p {
+        font-size: 1rem;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-regreso h1 {
+        font-size: 2.5rem;
+    }
+
+    .separador span {
+        width: 40px;
+    }
+
+    .dato-destacado {
+        flex-direction: column;
+    }
+
+    .boton-explorar,
+    .boton-siguiente {
+        padding: 14px 19px;
+        font-size: 0.76rem;
+    }
+
+    .pie-pagina span {
+        font-size: 0.7rem;
+    }
+}

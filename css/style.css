@@ -1,0 +1,774 @@
+
+:root {
+    --bordo: #641d25;
+    --bordo-oscuro: #2b1115;
+    --dorado: #c5a36a;
+    --dorado-claro: #e3c995;
+    --marfil: #f1e8d6;
+    --texto: #e8dfd0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.pagina-inicio {
+    min-height: 100vh;
+    background: #17110f;
+    color: var(--marfil);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* FONDO */
+
+.fondo-portada {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 10, 9, 0.94) 0%,
+            rgba(25, 13, 12, 0.78) 48%,
+            rgba(20, 12, 11, 0.43) 100%
+        ),
+        url('../img/portada.jpg');
+
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+}
+
+.velo-portada {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.30),
+            transparent 25%,
+            transparent 75%,
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    width: 100%;
+    padding: 30px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(197, 163, 106, 0.22);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--marfil);
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.marca-simbolo {
+    color: var(--dorado);
+    font-size: 22px;
+}
+
+.encabezado-materia {
+    color: rgba(241, 232, 214, 0.65);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* PORTADA */
+
+.portada {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    padding: 150px 8% 100px;
+
+    display: flex;
+    align-items: center;
+}
+
+.portada-contenido {
+    width: 100%;
+    max-width: 900px;
+    animation: aparecer 1.2s ease both;
+}
+
+.etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    color: var(--dorado-claro);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.etiqueta span {
+    width: 35px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(48px, 7.5vw, 105px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 3px;
+
+    text-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+h1 span {
+    color: var(--dorado-claro);
+    font-size: 0.76em;
+    letter-spacing: 7px;
+}
+
+/* SEPARADOR */
+
+.separador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 280px;
+    margin: 35px 0 25px;
+
+    color: var(--dorado);
+}
+
+.separador span {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--dorado)
+    );
+}
+
+.separador span:last-child {
+    background: linear-gradient(
+        90deg,
+        var(--dorado),
+        transparent
+    );
+}
+
+.separador div {
+    font-size: 17px;
+}
+
+/* DESCRIPCIÓN */
+
+.portada-descripcion {
+    max-width: 570px;
+
+    color: rgba(241, 232, 214, 0.82);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+}
+
+/* BOTÓN */
+
+.boton-comenzar {
+    display: inline-flex;
+    align-items: center;
+    gap: 35px;
+
+    margin-top: 38px;
+    padding: 18px 25px;
+
+    border: 1px solid var(--dorado);
+    background: rgba(100, 29, 37, 0.65);
+
+    color: var(--marfil);
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+.boton-comenzar:hover {
+    background: var(--dorado);
+    color: #1b1110;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.flecha {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.boton-comenzar:hover .flecha {
+    transform: translateX(5px);
+}
+
+.portada-nota {
+    margin-top: 50px;
+
+    color: rgba(227, 201, 149, 0.65);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+/* INDICADOR */
+
+.indicador-scroll {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    color: rgba(241, 232, 214, 0.55);
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    transform: translateX(-50%);
+}
+
+.indicador-scroll span {
+    width: 1px;
+    height: 30px;
+    background: var(--dorado);
+}
+
+/* CRÉDITOS */
+
+.creditos {
+    position: relative;
+    z-index: 2;
+
+    padding: 85px 9% 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #211617,
+            #140f0e
+        );
+
+    border-top: 1px solid rgba(197, 163, 106, 0.35);
+}
+
+.creditos-titulo {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.creditos-titulo > span {
+    color: var(--dorado);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.creditos-titulo h2 {
+    margin-top: 15px;
+
+    color: var(--marfil);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 400;
+}
+
+.creditos-datos {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(197, 163, 106, 0.25);
+    border-bottom: 1px solid rgba(197, 163, 106, 0.25);
+}
+
+.dato-etiqueta {
+    display: block;
+    margin-bottom: 18px;
+
+    color: var(--dorado);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.dato p {
+    margin: 9px 0;
+
+    color: rgba(241, 232, 214, 0.78);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 1000px;
+    margin: 30px auto 0;
+
+    color: rgba(241, 232, 214, 0.4);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* ANIMACIÓN */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .encabezado {
+        padding: 22px 6%;
+    }
+
+    .marca {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .encabezado-materia {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .portada {
+        min-height: 90vh;
+        padding: 140px 7% 100px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 11vw, 72px);
+        letter-spacing: 1px;
+    }
+
+    h1 span {
+        font-size: 0.72em;
+        letter-spacing: 3px;
+    }
+
+    .etiqueta {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .portada-descripcion {
+        font-size: 13px;
+    }
+
+    .creditos {
+        padding: 65px 8% 25px;
+    }
+
+    .creditos-datos {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pie {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .encabezado-materia {
+        display: none;
+    }
+
+    .boton-comenzar {
+        gap: 20px;
+        padding: 16px 18px;
+        font-size: 9px;
+    }
+
+    .portada-nota {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+/* =====================================
+   MENÚ GENERAL DE NAVEGACIÓN
+===================================== */
+
+.encabezado.menu-principal {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 1000 !important;
+
+    width: 100%;
+    min-height: 92px;
+    padding: 20px 4% !important;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+
+    background: rgba(25, 17, 17, 0.97);
+    border-bottom: 1px solid rgba(197, 163, 106, 0.4);
+}
+
+.menu-principal .marca {
+    flex-shrink: 0;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.menu-principal .marca-simbolo {
+    font-size: 25px;
+}
+
+.navegacion-general {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.enlace-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 12px 15px;
+
+    color: #e8dfd0;
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    border: 1px solid transparent;
+    transition: 0.25s ease;
+}
+
+.enlace-menu:hover {
+    color: #e3c995;
+    border-color: rgba(197, 163, 106, 0.45);
+    background: rgba(100, 29, 37, 0.3);
+}
+
+.enlace-menu.activo {
+    color: #e3c995;
+    border-color: #c5a36a;
+    background: rgba(100, 29, 37, 0.45);
+}
+
+/* =====================================
+   ADAPTACIÓN PARA PROYECTOR Y TABLET
+===================================== */
+
+@media (min-width: 1400px) {
+    .encabezado.menu-principal {
+        min-height: 105px;
+        padding: 24px 5% !important;
+    }
+
+    .menu-principal .marca {
+        font-size: 17px;
+    }
+
+    .enlace-menu {
+        font-size: 15px;
+        padding: 14px 17px;
+    }
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1050px) {
+    .encabezado.menu-principal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .navegacion-general {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado.menu-principal {
+        padding: 18px 5% !important;
+    }
+
+    .menu-principal .marca {
+        font-size: 12px;
+    }
+
+    .navegacion-general {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .enlace-menu {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 7px;
+        font-size: 11px;
+        text-align: center;
+    }
+}
+
+/* =====================================
+   PORTADA — MEJORA PARA PROYECTOR
+===================================== */
+
+.pagina-inicio .marca {
+    font-size: 15px;
+}
+
+.pagina-inicio .encabezado-materia {
+    font-size: 13px;
+}
+
+.pagina-inicio .portada {
+    min-height: 100vh;
+    padding: 170px 8% 120px;
+}
+
+.pagina-inicio .portada-contenido {
+    max-width: 1100px;
+}
+
+.pagina-inicio .etiqueta {
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+}
+
+.pagina-inicio .etiqueta span {
+    width: 45px;
+}
+
+.pagina-inicio .portada h1 {
+    font-size: clamp(65px, 8vw, 120px);
+    line-height: 1.12;
+    letter-spacing: 4px;
+}
+
+.pagina-inicio .portada h1 span {
+    font-size: 0.76em;
+    letter-spacing: 7px;
+}
+
+.pagina-inicio .separador {
+    width: 330px;
+    margin: 40px 0 30px;
+}
+
+.pagina-inicio .separador div {
+    font-size: 22px;
+}
+
+.pagina-inicio .portada-descripcion {
+    max-width: 720px;
+    font-size: 21px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+
+.pagina-inicio .boton-comenzar {
+    margin-top: 45px;
+    padding: 22px 32px;
+    gap: 40px;
+    font-size: 14px;
+}
+
+.pagina-inicio .boton-comenzar .flecha {
+    font-size: 25px;
+}
+
+.pagina-inicio .portada-nota {
+    margin-top: 55px;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.pagina-inicio .indicador-scroll {
+    font-size: 11px;
+}
+
+/* =====================================
+   CRÉDITOS — MAYOR LEGIBILIDAD
+===================================== */
+
+.pagina-inicio .creditos {
+    padding: 100px 9% 35px;
+}
+
+.pagina-inicio .creditos-titulo > span {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.pagina-inicio .creditos-titulo h2 {
+    font-size: clamp(30px, 3.5vw, 42px);
+    margin-top: 20px;
+}
+
+.pagina-inicio .creditos-datos {
+    max-width: 1150px;
+    padding: 45px 0;
+    gap: 50px;
+}
+
+.pagina-inicio .dato-etiqueta {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.pagina-inicio .dato p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 12px 0;
+}
+
+.pagina-inicio .pie {
+    max-width: 1150px;
+    margin-top: 35px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+    .pagina-inicio .portada {
+        padding: 145px 7% 100px;
+    }
+
+    .pagina-inicio .portada h1 {
+        font-size: clamp(48px, 10vw, 75px);
+    }
+
+    .pagina-inicio .portada-descripcion {
+        font-size: 17px;
+    }
+
+    .pagina-inicio .etiqueta {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .pagina-inicio .boton-comenzar {
+        font-size: 12px;
+    }
+
+    .pagina-inicio .dato p {
+        font-size: 16px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 420px) {
+    .pagina-inicio .portada h1 {
+        font-size: 2.5rem;
+    }
+
+    .pagina-inicio .portada h1 span {
+        font-size: 0.76em;
+        letter-spacing: 2px;
+    }
+
+    .pagina-inicio .portada-descripcion {
+        font-size: 15px;
+    }
+
+    .pagina-inicio .etiqueta {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .pagina-inicio .creditos-titulo h2 {
+        font-size: 27px;
+    }
+
+    .pagina-inicio .dato p {
+        font-size: 15px;
+    }
+}
